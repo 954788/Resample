@@ -42,6 +42,10 @@ class ViewController: UIViewController {
     @IBAction func startAction(_ sender: Any) {
         try? audioEngine.start()
     }
+    @IBAction func stopAction(_ sender: Any) {
+        self.audioEngine.stop()
+        self.audioEngine.inputNode.removeTap(onBus: 0)
+    }
     
     // MARK: Method
     private func setupEngine(){
